@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+.header {
+  height: 94px;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %inner;
+    padding: 0 20px;
+    position: relative;
+    height: 94px;
+    @include mq('sp') {
+      padding: 0;
+    }
+  }
+  &__heading {
+    padding-left: 63px;
+    background-image: url('../img/Pink and Purple Events & party Entertainment Logo.png');
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 42px 42px;
+  }
+  &__menu {
+    @include mq('tab') {
+      width: 100%;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq('tab') {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__item {
+    margin-right: 46px ;
+    font-weight: bold;
+
+    @include mq('tab') {
+      margin: 0 0 30px;
+      font-size: 1.8rem;
+      width: 100%;
+    }
+    a {
+      @include mq('tab') {
+        color: #fff;
+      }
+    }
+  }
+  &__btn {
+    @extend %btn;
+
+    @include mq('tab') {
+      display: none;
+    }
+  }
+}
+
+.sp-header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq('tab') {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    transform: translateX(280px);
+    transition: 0.3s;
+  } 
+}
+
+.js-button {
+  display: none;
+
+  @include mq('tab') {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.js-hamburger {
+  @include mq('tab') {  
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    z-index: 25;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid;
+    box-shadow: 0 0 2rem transparent;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+    &:hover,
+    &:focus {  
+    box-shadow: 0 0 .5rem rgba(161, 161, 161, 0.5);
+    }
+  }
+}
+
+.js-hamburger__line {
+  @include mq('tab') {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+    background-color: #333;
+    -webkit-transition: inherit;
+    transition: inherit;
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      content: '';
+      -webkit-transition: inherit;
+      transition: inherit;
+    }
+    &::before {
+      top: -5px;
+    }
+    &::after {
+      top: 5px;
+    }
+  }
+}
+
+.js-hamburger[aria-expanded="true"] {
+  @include mq('tab') {
+    border: 1px solid #fff!important;
+  }
+}
+
+.js-hamburger[aria-expanded="true"] .js-hamburger__line {
+  @include mq('tab') {
+    background-color: transparent;
+    &::before,
+    &::after {
+      top: 0;
+      background-color: #fff;
+    }
+    &::before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &::after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.drawer-background {
+  @include mq('tab') {
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 100%;
+    background-color: #333;
+    visibility: hidden;
+  }
+}
+
+.is-drawerActive {
+  .sp-header__menu {
+    @include mq('tab') {
+      transform: translateX(0px);
+      transition: 0.3s;
+      width: 50vw;
+      height: 100%;
+      background-color: rgba(46, 46, 45, 0.871);
+      z-index: 20;
+    }
+    @include mq('sp') {
+      width: 100%;
+    }
+  }
+
+  .drawer-background {
+    @include mq('tab') {
+      visibility: visible;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.price {
+  background-color: $background-color;
+  text-align: center;
+  overflow: hidden;
+  &__inner {
+    @extend %inner;
+  }
+  &__heading {
+    @extend %heading;
+    margin: 55px 0 70px 0;
+    span {
+      @extend %heading-span;
+    }
+  }
+  &__table {
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    max-width: 926px;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  &__table-head {
+    border: 1px solid #E5E5E5;
+    width: 31%;
+    padding: 35px 10px;
+  }
+  &__table-data {
+    border: 1px solid #E5E5E5;
+    width: 69%;
+    text-align: left;
+    padding: 35px 0 35px 33px;
+  }
+  &__text {
+    margin: 36px 0 68px 0;
+  }
+}

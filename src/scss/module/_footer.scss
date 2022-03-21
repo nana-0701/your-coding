@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.footer {
+  background-color: #F8F8F8;
+  text-align: center;
+  width: 100%;
+  height: 244px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__heading {
+    margin-bottom: 21px;
+  }
+  &__privacy,
+  &__law {
+    font-weight: bold;
+
+    @include mq('sp') {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__privacy {
+    margin-right: 29px;
+  }
+  &__copyright {
+    margin: 52px 0 0;
+    font-size: 0.875rem;
+
+  }
+}

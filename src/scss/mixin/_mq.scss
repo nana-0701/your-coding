@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+//media query
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+
+
+

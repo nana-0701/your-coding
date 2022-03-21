@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.mainvisual {
+  background-image: url("../../img/楕円形 1.svg");
+  background-position: top -145px right -70px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-bottom: 71px;
+  margin-top: 94px;
+  &__inner {
+    @extend %inner;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 674px;
+    padding-left: 20px;
+
+    @include mq('sp') {
+      padding: 0;
+    }
+  }
+  %__text{
+    margin-bottom: 44px;
+    font-weight: bold;
+  }
+  &__text {
+    width: 50%;
+
+    @include mq('sp') {
+      margin: 0 auto;
+      text-align: center;
+    }
+    &--big{
+      @extend %__text;
+      font-size: 2rem;
+
+      @include mq('sp') {
+        font-size: 1.81rem;
+      }
+    }
+    &--small {
+      @extend %__text;
+
+      @include mq('sp') {
+        font-size: 0.88rem;
+      }
+    }
+  }
+  &__btn {
+    @extend %btn;
+
+    @include mq('sp') {
+      width: 70%;
+      height: 48px;
+      line-height: 48px;
+    }
+  }
+  &__main {
+    width: 50%;
+
+    @include mq('sp') {
+      display: none;
+    }
+  }
+  &__img {
+    max-width: 518px;
+    width: 100%;
+  }
+}

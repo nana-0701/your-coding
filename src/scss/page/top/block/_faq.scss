@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.faq {
+  margin: 56px auto 81px;
+  &__inner {
+    @extend %inner;
+  }
+  &__heading {
+    @extend %heading;
+    margin-bottom: 32px;
+    span {
+      @extend %heading-span;
+    }
+  }
+}
+
+.accordion {
+  &__title {
+    font-size: 0.875rem;
+    position: relative;
+    cursor: pointer;
+    user-select: none; 
+    text-align: center;
+    padding: 20px 15px;
+    border-top: 1px solid #E5E5E5;
+    border-right: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+    &:nth-of-type(3) {
+      border-bottom: 1px solid #E5E5E5;
+    }
+  }
+  &__title.is-active {
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      transform: rotate(0);
+    }
+  }
+  &__content {
+    padding: 0 35px;
+    margin: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: .3s;
+    font-size: 0.875rem;
+    font-weight: bold;
+    @include mq('sp') {
+      padding: 0 15px;
+    }
+  }
+  &__content.is-open {
+    background-color: #F2F2F2;
+    padding: 17px 35px;
+    margin: 0;
+    line-height: 1.8;
+    height: auto;
+    opacity: 1;
+    border-right: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+    color: #444;
+    @include mq('sp') {
+      padding: 17px 15px;
+    }
+  }
+}

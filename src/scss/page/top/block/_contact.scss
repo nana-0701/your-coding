@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+.contact {
+  width: 100%;
+  background: $gradient;
+  overflow: hidden;
+  &__heading {
+    @extend %heading;
+    color: #fff;
+    margin: 63px 0 36px;
+    span {
+      @extend %heading-span;
+      color: #fff;
+    }
+  }
+  &__text {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__inner {
+    @extend %inner;
+  }
+}
+
+.form {
+  max-width: 908px;
+  width: 100%;
+  margin: 44px auto 70px;
+  background-color: #fff;
+  padding: 35px 62px;
+
+  @include mq('sp') {
+    padding: 25px;
+  }
+  &__label {
+    font-weight: bold;
+    span {
+      border-radius: 10px;
+      background-color: #0C449B;
+      color: #fff;
+      margin-left: 23px;
+      padding: 4px 16px 6px;
+      font-size: 0.875rem;
+    }
+  }
+  &__field {
+    margin: 35px 0 20px;
+  }
+  &__input {
+    display: inline-block;
+    max-width: 500px;
+    width: 100%;
+    height: 43px;
+    background-color: $background-color;
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+  }
+  &__textarea {
+    display: inline-block;
+    width: 100%;
+    height: 179px;
+    background-color: $background-color;
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+    resize: none;
+  }
+  &__wrapper--middle{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  &__checkbox {
+    transform: scale(1.5);
+    margin-right: 10px;
+  }
+  &__wrapper--bottom {
+    text-align: center;
+  }
+  &__submit-btn {
+    @extend %btn;
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+      opacity: 0.6;
+    }
+    @include mq('sp') {
+      width: 70%;
+      height: 48px;
+      line-height: 48px;
+    }
+  }
+}
+
+.js-false {
+  display: none;
+}
+
+// thanks.html
+.thanks {
+  width: 90%;
+  margin: 0 auto;
+  background: $background-color;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  &__wrapper {
+    padding: 60px 30px;
+    text-align: center;
+    font-weight: bold;
+
+    @include mq('sp') {
+      padding: 20px;
+    }
+  }
+  &__heading {
+    font-size: 3rem;
+    margin: 0;
+
+    @include mq('sp') {
+      font-size: 2rem;
+    }
+  }
+  &__text {
+    font-size: 1.3rem;
+    color: rgb(88, 87, 87);
+
+    @include mq('sp') {
+      font-size: 1rem;
+    }
+  }
+  &__btn {
+    @extend %btn;
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+
+    @include mq('sp') {
+      height: 48px;
+      line-height: 48px;
+      width: 70%;
+    }
+  }
+}
